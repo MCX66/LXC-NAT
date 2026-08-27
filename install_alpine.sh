@@ -30,7 +30,7 @@ config_after_install() {
     local existing_password=$(/usr/local/x-ui/x-ui setting -show true | grep -Eo 'password: .+' | awk '{print $2}')
     local existing_webBasePath=$(/usr/local/x-ui/x-ui setting -show true | grep -Eo 'webBasePath: .+' | awk '{print $2}')
     local existing_port=$(/usr/local/x-ui/x-ui setting -show true | grep -Eo 'port: .+' | awk '{print $2}')
-    local server_ip="[2406:ef80:1:4a41::35d]"
+    local server_ip="" #ip地址 v6 v4
 
     if [[ ${#existing_webBasePath} -lt 4 ]]; then
         if [[ "$existing_username" == "admin" && "$existing_password" == "admin" ]]; then
